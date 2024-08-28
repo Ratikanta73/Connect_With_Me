@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f6;
+    font-family: Arial, sans-serif;
+}
+
+.link-tree {
+    text-align: center;
+    padding: 2.5px;
+    border-radius: 11px;
+    width: 350px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.link-tree::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(70deg, #ffc179, #ffa2c4, #e3abff, #9ad1ff);
+    background-size: 500%;
+    z-index: -1;
+    animation: gradientBorder 5s linear infinite;
+    border-radius: inherit;
+}
+
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.link-tree .content {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(42, 44, 97, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+.profile img:hover {
+    box-shadow: 0 0 20px rgba(255, 183, 234, 0.8);
+}
+
+.profile h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile h3 {
+    font-weight: 550;
+    color: #787777;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+h6 {
+    color: #bac6d7;
+    font-size: 8px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #a1bade;
+    color: rgb(1, 49, 111);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.links a:hover {
+    background-color: #f2b4b4;
+    color: black;
+}
+
+.links a i {
+    margin-right: 10px;
+    font-size: 30px;
+}
